@@ -19,13 +19,6 @@ export interface ProcessStep {
   description: string;
 }
 
-export interface AnalysisResult {
-  category: string;
-  priority: string;
-  sentiment: string;
-  suggestedAction: string;
-}
-
 export interface Testimonial {
   id: string;
   quote: string;

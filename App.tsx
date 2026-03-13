@@ -11,10 +11,7 @@ import { BookingModal } from './components/BookingModal';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { ApiKeyModal } from './components/ApiKeyModal';
-import { Settings } from 'lucide-react';
-
-const Navbar: React.FC<{ onOpenBooking: () => void, onOpenSettings: () => void }> = ({ onOpenBooking, onOpenSettings }) => {
+const Navbar: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [logoAnimated, setLogoAnimated] = useState(false);
@@ -61,14 +58,6 @@ const Navbar: React.FC<{ onOpenBooking: () => void, onOpenSettings: () => void }
           <a href="#process" className="text-xs font-medium uppercase tracking-widest text-gray-400 hover:text-white transition-colors" data-hover-text="Method">Process</a>
 
           <button
-            onClick={onOpenSettings}
-            className="text-gray-400 hover:text-white transition-colors"
-            title="API Settings"
-          >
-            <Settings className="w-5 h-5" />
-          </button>
-
-          <button
             onClick={onOpenBooking}
             className="px-6 py-2 bg-white text-black text-xs font-bold uppercase tracking-wider rounded-full hover:bg-gray-200 transition-colors"
             data-hover-text="Book Now"
@@ -79,12 +68,6 @@ const Navbar: React.FC<{ onOpenBooking: () => void, onOpenSettings: () => void }
 
         {/* Mobile Toggle */}
         <div className="md:hidden flex items-center gap-4">
-          <button
-            onClick={onOpenSettings}
-            className="text-gray-400 hover:text-white transition-colors"
-          >
-            <Settings className="w-5 h-5" />
-          </button>
           <button className="text-white" onClick={() => setIsOpen(true)}>
             <Menu className="w-6 h-6" />
           </button>
@@ -107,7 +90,6 @@ const Navbar: React.FC<{ onOpenBooking: () => void, onOpenSettings: () => void }
             <a href="#services" onClick={() => setIsOpen(false)} className="text-3xl font-display text-white hover:text-karyo-cyan transition-colors">Services</a>
             <a href="#work" onClick={() => setIsOpen(false)} className="text-3xl font-display text-white hover:text-karyo-cyan transition-colors">Work</a>
             <a href="#process" onClick={() => setIsOpen(false)} className="text-3xl font-display text-white hover:text-karyo-cyan transition-colors">Process</a>
-            <button onClick={() => { setIsOpen(false); onOpenSettings(); }} className="text-3xl font-display text-white hover:text-karyo-cyan transition-colors">Settings</button>
             <button onClick={() => { setIsOpen(false); onOpenBooking(); }} className="text-3xl font-display text-karyo-cyan">Start Project</button>
           </motion.div>
         )}
@@ -118,12 +100,11 @@ const Navbar: React.FC<{ onOpenBooking: () => void, onOpenSettings: () => void }
 
 const App: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [isApiKeyOpen, setIsApiKeyOpen] = useState(false);
 
   return (
     <main className="bg-karyo-black min-h-screen text-white selection:bg-white selection:text-black">
       <Cursor />
-      <Navbar onOpenBooking={() => setIsBookingOpen(true)} onOpenSettings={() => setIsApiKeyOpen(true)} />
+      <Navbar onOpenBooking={() => setIsBookingOpen(true)} />
       <Hero onStartProject={() => setIsBookingOpen(true)} />
       <Services />
       <Work />
@@ -132,7 +113,6 @@ const App: React.FC = () => {
       <Contact onBookCall={() => setIsBookingOpen(true)} />
       <Footer />
       <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
-      <ApiKeyModal isOpen={isApiKeyOpen} onClose={() => setIsApiKeyOpen(false)} />
     </main>
   );
 };
