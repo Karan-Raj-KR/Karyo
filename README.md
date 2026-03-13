@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+ 
   
   <h1>KĀRYO</h1>
   <p><strong>A Modern, High-Performance Digital Agency Portfolio</strong></p>
@@ -34,37 +34,6 @@ KĀRYO is a premium, cutting-edge digital agency portfolio built to showcase cre
 - **3D Graphics:** [Three.js](https://threejs.org/) + [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction) + [Drei](https://github.com/pmndrs/drei)
 - **Icons:** [Lucide React](https://lucide.dev/)
 - **Language:** Fully typed in TypeScript for better developer experience and reliability.
-
-## 💻 Getting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) (v18+ recommended)
-- `npm` or any package manager of your choice
-
-### Installation & Setup
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Karan-Raj-KR/Karyo.git
-   cd Karyo
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
-   > The production-ready output will be located in the `dist` directory, easily deployable to platforms like Vercel, Netlify, or Cloudflare Pages.
 
 ## 🎨 Design Philosophy
 
